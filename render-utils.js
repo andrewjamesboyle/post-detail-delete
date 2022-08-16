@@ -41,3 +41,27 @@ export function renderPosts(posts) {
 
     return fragment;
 }
+
+export function renderDetail(post) {
+    const detailsEl = document.createElement('div');
+    
+    const titleEl = document.createElement('h1');
+    titleEl.textContent = post.title;
+
+    const categoryEl = document.createElement('h2');
+    categoryEl.textContent = post.category;
+
+    const descriptionEl = document.createElement('p');
+    descriptionEl.textContent = post.description;
+
+    const contactEl = document.createElement('p');
+    contactEl.textContent = post.category;
+
+    // if (userId === creatorId) {
+        // const buttonEl = document.createElement('button');
+        // buttonEl.addEventListener('click')
+
+    detailsEl.append(titleEl, categoryEl, descriptionEl, contactEl);
+
+    return detailsEl;
+}
