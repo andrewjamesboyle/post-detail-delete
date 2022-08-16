@@ -1,17 +1,15 @@
-// get params
-// call fetch utils
-
 import { renderDetail } from '../render-utils.js';
-// import { getPostDetail }
+import { getPostById } from '../fetch-utils.js';
 
 //  grab dom element 
 
-postDetailsEl = document.getElementById('post-details-container');
+const postDetailsEl = document.getElementById('post-details-container');
 
-const id = URLSearchParams(window.location.search);
+const params = new URLSearchParams(window.location.search);
 
 async function displayPost() {
-    const post = await getPostDetail(id);
+    const post = await getPostById(params.get('id'));
+    console.log(post);
     const postDetailEl = renderDetail(post);
     postDetailsEl.append(postDetailEl);
 }
