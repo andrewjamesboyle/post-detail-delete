@@ -1,5 +1,5 @@
 .details {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto;
     align-items: center;
 }
