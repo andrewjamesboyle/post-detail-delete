@@ -15,6 +15,8 @@ Sketch out what the page will look like. On your diagram, identify:
 
 Take a screen shot and include in your repo
 
+Screen shot posted in assets folder as kitten details plan.jpeg
+
 ## Page & UI
 
 Start by adding a new page at `/post`. Consider copying `/create-post` as the starter, but make sure to change the css link and js script tag.
