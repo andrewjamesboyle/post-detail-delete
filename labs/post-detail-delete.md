@@ -41,6 +41,9 @@ Start by creating a `displayPost` async function and simply calling the imported
 
 Grab your needed DOM elements and begin to modify the display based on the values in the post detail and the user object. **Only show the delete button and subscribe to click event if the post belongs to the current user!**
 
+Check if userId === userPostCreator
+if true, render deleteButton that can delete the post from supabase
+
 ## Links
 
 Add links to the home page to each post to make the header linked to the corresponding detail page

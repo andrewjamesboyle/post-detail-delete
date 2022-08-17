@@ -62,13 +62,6 @@ export function renderDetail(post) {
     const contactEl = document.createElement('p');
     contactEl.textContent = `${post.contact}`;
 
-    // const buttonEl = document.createElement('button');
-    // buttonEl.addEventListener('click');
-
-    // if (userId === creatorId) {
-        // const buttonEl = document.createElement('button');
-        // buttonEl.addEventListener('click')
-
     detailsEl.append(titleEl, categoryEl, descriptionEl, contactEl);
 
     return detailsEl;

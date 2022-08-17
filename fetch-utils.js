@@ -56,6 +56,10 @@ export async function createPost(post) {
 
 export async function getPostById(id) {
     const response = await client.from('posts').select('*, category:categories(*)').match({ id }).single();
-    console.log(response, 'response');
+    return checkError(response);
+}
+
+export async function deletePostById(id) {
+    const response = await client.from('posts').delete().match({ id });
     return checkError(response);
 }
