@@ -15,6 +15,8 @@ Sketch out what the page will look like. On your diagram, identify:
 
 Take a screen shot and include in your repo
 
+Screen shot posted in assets folder as kitten details plan.jpeg
+
 ## Page & UI
 
 Start by adding a new page at `/post`. Consider copying `/create-post` as the starter, but make sure to change the css link and js script tag.
@@ -38,6 +40,9 @@ Start by creating a `displayPost` async function and simply calling the imported
 ## Display
 
 Grab your needed DOM elements and begin to modify the display based on the values in the post detail and the user object. **Only show the delete button and subscribe to click event if the post belongs to the current user!**
+
+Check if userId === userPostCreator
+if true, render deleteButton that can delete the post from supabase
 
 ## Links
 
