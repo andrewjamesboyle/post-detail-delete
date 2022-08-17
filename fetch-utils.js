@@ -55,6 +55,7 @@ export async function createPost(post) {
 }
 
 export async function getPostById(id) {
-    const response = await client.from('posts').select('*, category: categories(*)').match({ id }).single();
-    return response;
+    const response = await client.from('posts').select('*, category:categories(*)').match({ id }).single();
+    console.log(response, 'response');
+    return checkError(response);
 }

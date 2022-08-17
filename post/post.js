@@ -1,5 +1,5 @@
 import { renderDetail } from '../render-utils.js';
-import { getPostById } from '../fetch-utils.js';
+import { checkAuth, getCategories, getPostById } from '../fetch-utils.js';
 
 //  grab dom element 
 
@@ -9,9 +9,12 @@ const params = new URLSearchParams(window.location.search);
 
 async function displayPost() {
     const post = await getPostById(params.get('id'));
-    console.log(post);
     const postDetailEl = renderDetail(post);
     postDetailsEl.append(postDetailEl);
 }
 
 displayPost();
+
+checkAuth();
+
+getCategories();
