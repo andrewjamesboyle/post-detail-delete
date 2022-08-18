@@ -27,7 +27,6 @@ formEl.addEventListener('submit', async (e) => {
 
 async function displayProfile() {
     const response = await getProfile(user.id);
-    console.log(response);
     if (response) {
         profileNameInput.value = response.name;
         profileBioInput.value = response.bio;

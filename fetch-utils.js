@@ -72,4 +72,8 @@ export async function getProfile(id) {
     const response = await client.from('profiles').select('*').match({ id }).single();
     return response.data;
 }
-// profiles table will link to users table with foreign key relationship that pulls userId from users table
+
+export async function getProfiles() {
+    const response = await client.from('profiles').select('*');
+    return response.data;
+}
