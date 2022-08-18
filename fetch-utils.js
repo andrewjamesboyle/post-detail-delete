@@ -65,7 +65,7 @@ export async function deletePostById(id) {
 }
 
 export async function saveProfile(userProfile) {
-    return await client.from('whatever we name the table').upsert(userProfile);
+    return await client.from('profiles').upsert(userProfile);
 }
 
 // profiles table will link to users table with foreign key relationship that pulls userId from users table
