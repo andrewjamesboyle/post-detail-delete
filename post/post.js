@@ -1,5 +1,5 @@
 import { renderDetail } from '../render-utils.js';
-import { checkAuth, deletePostById, getPostById } from '../fetch-utils.js';
+import { checkAuth, deletePostById, getPostById, signOutUser } from '../fetch-utils.js';
 
 //  grab dom element 
 
@@ -26,3 +26,7 @@ async function displayPost() {
 }
 
 displayPost();
+
+const signOutLink = document.getElementById('sign-out-link');
+signOutLink.addEventListener('click', signOutUser);
+checkAuth();
