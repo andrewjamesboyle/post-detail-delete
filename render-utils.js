@@ -66,3 +66,14 @@ export function renderDetail(post) {
 
     return detailsEl;
 }
+
+export function renderProfile(user) {
+    const profileEl = document.createElement('div');
+
+    const nameEl = document.createElement('p');
+    nameEl.textContent = `${user.name}`;
+
+    profileEl.append(nameEl);
+
+    return profileEl;
+}

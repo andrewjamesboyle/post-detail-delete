@@ -14,37 +14,30 @@
     <link rel="stylesheet" href="/styles/reset.css" />
     <link rel="stylesheet" href="/styles/global.css" />
     <link rel="stylesheet" href="/styles/bulletin-board.css" />
-    <title>Post Details</title>
+    <title>Profile</title>
 </head>
 
 <body>
     <header>
         <img class="logo" src="/assets/cbb-logo.png">
-        <h1>Post Details</h1>
+        <h1>List of Current Users</h1>
         <nav>
             <a href="../create-post">Add Post</a>
             <a href="../">Bulletin</a>
-            <a href="../users">Users</a>
             <a href="../profile">Edit Profile</a>
-            <a id="sign-out-link" href="../auth">Sign Out</a>
+            <a id="sign-out-link" href="/auth">Sign Out</a>
         </nav>
     </header>
 
     <main>
-    
-        <div class="details" id="post-details-container">
-            <!-- <h1>Title of Post</h1>
-            <h2>Category(name): Emoji</h2>
-            <p>Description</p>
-            <p>Contact</p>
-            <button>Delete</button> -->
+        <div id="users-container">
         </div>
 
     </main>
 
     <footer>&copy;2022 Software Developer</footer>
 
-    <script type="module" src="post.js"></script>
+    <script type="module" src="users.js"></script>
 </body>
 
 </html>
