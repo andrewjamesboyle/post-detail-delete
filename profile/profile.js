@@ -3,6 +3,9 @@ import { checkAuth, saveProfile, getProfile, signOutUser } from '../fetch-utils.
 const formEl = document.getElementById('user-form');
 const profileNameInput = formEl.querySelector('[name=user-name]');
 const profileBioInput = formEl.querySelector('[name=user-bio]');
+const signOutLink = document.getElementById('sign-out-link');
+
+signOutLink.addEventListener('click', signOutUser);
 
 const userProfile = {
     name: '',
@@ -35,6 +38,4 @@ async function displayProfile() {
 
 displayProfile();
 
-const signOutLink = document.getElementById('sign-out-link');
-signOutLink.addEventListener('click', signOutUser);
 checkAuth();

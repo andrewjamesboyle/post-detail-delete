@@ -5,6 +5,8 @@ import { checkAuth, deletePostById, getPostById, signOutUser } from '../fetch-ut
 
 const postDetailsEl = document.getElementById('post-details-container');
 const user = checkAuth();
+const signOutLink = document.getElementById('sign-out-link');
+signOutLink.addEventListener('click', signOutUser);
 
 const params = new URLSearchParams(window.location.search);
 
@@ -27,6 +29,4 @@ async function displayPost() {
 
 displayPost();
 
-const signOutLink = document.getElementById('sign-out-link');
-signOutLink.addEventListener('click', signOutUser);
 checkAuth();

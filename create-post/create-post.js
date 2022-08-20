@@ -4,8 +4,8 @@ import { checkAuth, signOutUser, getCategories, createPost } from '../fetch-util
 import { renderCategoryOptions } from '../render-utils.js';
 
 const signOutLink = document.getElementById('sign-out-link');
-checkAuth();
 signOutLink.addEventListener('click', signOutUser);
+checkAuth();
 
 const categorySelect = document.getElementById('category-select');
 const postItForm = document.getElementById('post-it-form');
