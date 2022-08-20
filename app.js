@@ -1,17 +1,13 @@
-// importing other stuff, utility functions for:
-// working with supabase
-import { checkAuth, signOutUser, getPosts } from './fetch-utils.js';
-// pure rendering (data --> DOM)
+import { checkAuth, signOutUser, getPosts, getCategories, getPostsByCategory } from './fetch-utils.js';
+
 import { renderPosts } from './render-utils.js';
 
-// some "boiler plate" code for:
-// sign out link
+
 const signOutLink = document.getElementById('sign-out-link');
 signOutLink.addEventListener('click', signOutUser);
-// make sure we have a user
+
 checkAuth();
 
-// grab needed DOM elements on page
 const bulletinBoard = document.getElementById('bulletin-board');
 
 async function displayPosts() {
@@ -21,3 +17,19 @@ async function displayPosts() {
 }
 
 displayPosts();
+
+getCategories();
+
+const dropdownEl = document.getElementById('dropdown');
+
+dropdownEl.addEventListener('change', async () => {
+    bulletinBoard.textContent = '';
+    const userCategory = await getPostsByCategory(dropdownEl.value);
+    if (userCategory.length === 0) {
+        bulletinBoard.textContent = 'No Posts';
+    } else {
+        const posts = renderPosts(userCategory);
+        bulletinBoard.append(posts);
+    }
+});
+

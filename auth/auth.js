@@ -1,5 +1,5 @@
 // import services and utilities
-import { getUser, signInUser, signUpUser } from '../fetch-utils.js';
+import { getUser, saveProfile, signInUser, signUpUser } from '../fetch-utils.js';
 
 const authHeader = document.getElementById('auth-header');
 const authForm = document.getElementById('auth-form');
@@ -71,6 +71,9 @@ authForm.addEventListener('submit', async (e) => {
     // use the authType.action (either signInUser or signUpUser)
     // and capture any returned error
     const { error } = await authType.action(formData.get('email'), formData.get('password'));
+    if (authType === signUpType) {
+        await saveProfile({ name:formData.get('email'), bio:'I have not made a bio yet' });
+    }
 
     if (error) {
         // display the error and reset the button to be active

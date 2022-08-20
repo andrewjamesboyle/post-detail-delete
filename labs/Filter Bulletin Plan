@@ -1,0 +1,26 @@
+
+
+
+<!-- window.addeventlistener('load')
+    displayPosts() -->
+
+Event listener ('change') async
+    await displayFilteredPosts()
+
+
+async displayFilteredPosts(dropdown.value) {
+    - call getPostByCategory(category_id) function from fetch utils
+    - we expect this function to return an array of posts all with the same category id
+    - we store this return in a variable const posts
+    - we call renderPosts and pass in this array
+    - store the return element in another variable const PostsEl
+    - we append PostsEl into the bulletin board container
+}
+
+<!-- not making use of array.filter -->
+
+
+
+if (user selects drop down) {
+    call displayFilteredPosts(dropdown.value)
+} else (business as usual)
